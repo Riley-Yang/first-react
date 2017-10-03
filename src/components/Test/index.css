@@ -1,0 +1,13 @@
+.btn{
+	border:none;
+	background: #900;
+	color:#fff;
+	padding:10px 20px;
+	outline: none;
+}
+.btn-show{
+	display: block;
+}
+.btn-hidden{
+	display: none;
+}

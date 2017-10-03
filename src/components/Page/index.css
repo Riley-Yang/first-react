@@ -1,0 +1,9 @@
+.container{
+	display: block;
+	width:300px;
+	margin:0 auto;
+	padding:0 30px;
+	border:1px solid #909;
+	border-bottom: none;
+	border-radius: 10px;
+}

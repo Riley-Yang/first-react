@@ -1,0 +1,62 @@
+props属性
+	props(属性) 得到外部传入参数配置组件形态
+	eg:<button color="#909" size="sm"></button>
+	在 render函数中 console.log(this.props.size)
+					console.log(this.props.color)
+static静态属性
+	static defaultProps={
+		text:"确定"
+	}
+	<button>{this.props.text}</button>
+	默认属性，没有传值时为此值。若有传值为传值。
+jsx语法
+1.一个组件必须有一个render方法，必须返回一个jsx元素
+2.只能有一个根元素
+3.js代码，变量，表达式，html标签等都放在 {} 中
+
+事件
+元素上加属性 onClick onKeyDown
+on*的事件只能用在普通标签上 render 里边的标签，不能用在组件标签上 
+
+外边传入的属性(props值)，组件内部无法更改 
+	即 通过this.props.name=    无法更改，
+	可以通过外部修改，外部传入新的props值
+
+组件中的状态
+state:用于组件 保存 控制 修改自己的可变状态
+	外部无法访问、修改，只能内部修改
+	组件的初始状态 在 constructor中定义
+			constructor(props){
+				super(props);
+				this.state={
+					isShow:true
+				};
+			}
+		使用this.setState方法更新组件状态
+
+react 渲染列表
+	结构相同是使用    文章列表、评论列表
+	data.map(function(data,index)){	//map遍历 第一个是详细信息，第二个是索引
+
+	}
+在遍历生成jsx元素时，要加上key属性，每个key值必须唯一
+
+react使用的是虚拟DOM，存在内存里，然后渲染到浏览中形成真实DOM并在浏览器中保存一份
+react组件是通过 props state 两个变化的，而当状态发生变化时会引起组件重新渲染，渲染时会到内存查找需要更改的组件，所以需要加上唯一的key值
+
+
+react留言板组件
+	数据来自外部(Page)
+	渲染和逻辑在组件内部实现
+	通过 this.props.自定义属性名  获取外部数据
+	实现 	 高内聚 低耦合
+
+react获取表单数据
+	1.添加 ref属性	代替原有name属性
+	<input ref="username" type="text"/>
+	2.通过 this.refs.username.value 获取
+			this.refs.username 获得该表单
+
+	受控表单组件
+		当给一个表单添加value属性时，该表单将变成只读的。如果要修改需要通过 onchang方法
+		e.target.value  获取表单值

@@ -1,0 +1,53 @@
+import React,{Component,PropType} from "react";
+import "./index.css";
+
+class Form extends Component{
+	constructor(props){
+		super(props);
+			//用于组件保存、修改、修改、控制自己的可变状态
+		this.state={
+			username:"姓名",
+			usermsg:"神经病"
+		}
+	}
+
+	handleClick(){
+		console.log(this.refs.username.value);
+		console.log(this.refs.usermsg.value);
+
+	}
+
+		// 改变input的值
+	changeName(e){
+		this.setState({
+			username:e.target.value
+		})
+	}
+		// 改变多行文本框的值
+	changeMsg(e){
+		this.setState({
+			usermsg:e.target.vlue
+		})
+	}
+
+	render(){
+		return(
+			<ul className="form">
+				<li className="username">
+					<span>用户名：</span>
+					{/*用到value设置默认值时，需要用onChang事件来改变默认值*/}
+					<input ref="username" type="text" value={this.state.username} onChange={this.changeName.bind(this)} />
+				</li>
+				<li className="usermsg">
+					<span>内&nbsp;&nbsp;&nbsp;容：</span>
+					<textarea ref="usermsg" value={this.state.usermsg} onChange={this.changeMsg.bind(this)} />
+				</li>
+				<li>
+					<button onClick={this.handleClick.bind(this)}>发布</button>
+				</li>
+			</ul>
+		);
+	}
+}
+
+export default Form;
