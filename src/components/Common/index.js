@@ -5,6 +5,7 @@ class Common extends Component{
 		super(props);
 	}
 	render(){
+		// console.log(this.props.data)
 		return(
 			<li>{this.props.data.name}<span>{this.props.data.msg}</span></li>
 		)

@@ -6,14 +6,21 @@ class Form extends Component{
 		super(props);
 			//用于组件保存、修改、修改、控制自己的可变状态
 		this.state={
-			username:"姓名",
-			usermsg:"神经病"
+			username:"辛弃疾",
+			usermsg:"众里寻他千百度"
 		}
 	}
 
 	handleClick(){
-		console.log(this.refs.username.value);
-		console.log(this.refs.usermsg.value);
+		let username=this.refs.username.value;
+		let usermsg=this.refs.usermsg.value;
+		let msgCon={
+			"id":Math.random(),
+			"name":username,
+			"msg":usermsg
+		}
+		this.props.changePub(msgCon)
+
 
 	}
 
