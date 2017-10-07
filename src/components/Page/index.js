@@ -20,11 +20,15 @@ let Msgdata1 = [
 class Page extends Component{
 	constructor(props){
 		super(props);
+		this.state={
+			text:'哈哈哈'
+		}
 	}
 
 	render(){
 		return(
 			<div className="container">
+				<h3>{this.state.text}</h3>
 				<Form />
 				<List data={Msgdata} />
 				<List data={Msgdata1} />

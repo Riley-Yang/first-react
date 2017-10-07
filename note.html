@@ -57,6 +57,17 @@ react获取表单数据
 	2.通过 this.refs.username.value 获取
 			this.refs.username 获得该表单
 
-	受控表单组件
+	受控表单组件(官方推荐使用)
 		当给一个表单添加value属性时，该表单将变成只读的。如果要修改需要通过 onchang方法
 		e.target.value  获取表单值
+
+	非受控表单组件
+		不设置value值，可以通过defaultValue设置默认值
+
+react组件通信
+	
+	父组件与子组件通过props通信
+	子组件与父组件通过回调函数，父组件将定义的方法传入子组件的porps，子组件内部进行调用
+
+兄弟间通信
+	1、通过父组件进行中间转化
